@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/PetFinder/static/css/main.c2c9a63c.css",
+    "main.js": "/PetFinder/static/js/main.70b5e0e3.js",
+    "static/js/787.08d5ce1b.chunk.js": "/PetFinder/static/js/787.08d5ce1b.chunk.js",
+    "static/media/dog-home-big.jpg": "/PetFinder/static/media/dog-home-big.c091b548e5077f4d31d9.jpg",
+    "static/media/cat-home-big.jpg": "/PetFinder/static/media/cat-home-big.f860349f5e367a7eef88.jpg",
+    "static/media/cat-home.jpg": "/PetFinder/static/media/cat-home.52de47e7440ded352699.jpg",
+    "static/media/dog-home.jpg": "/PetFinder/static/media/dog-home.3811cad2159250f6b75c.jpg",
+    "static/media/no-image.webp": "/PetFinder/static/media/no-image.4176a3baca7d587a3b43.webp",
+    "static/media/cats-header.png": "/PetFinder/static/media/cats-header.d32e4916dfe9fbc69482.png",
+    "static/media/paw-solid.svg": "/PetFinder/static/media/paw-solid.74d955e51f11d7cadd9fe6271ee9abfe.svg",
+    "index.html": "/PetFinder/index.html",
+    "static/media/caret-down-solid.svg": "/PetFinder/static/media/caret-down-solid.02538741938d1ddc342d4f4fe5faedb2.svg",
+    "static/media/bars-solid.svg": "/PetFinder/static/media/bars-solid.69773c1611200b97550e31684016d500.svg",
+    "static/media/magnifying-glass-solid.svg": "/PetFinder/static/media/magnifying-glass-solid.e9b86a1e651415e0ac7ec2ba22e5a84a.svg",
+    "static/media/caret-right-solid.svg": "/PetFinder/static/media/caret-right-solid.6beb0c5f55b4c606ddbabd5c8bdd1e46.svg",
+    "static/media/caret-left-solid.svg": "/PetFinder/static/media/caret-left-solid.682853370b4000c0af78c0910e6cc13e.svg",
+    "main.c2c9a63c.css.map": "/PetFinder/static/css/main.c2c9a63c.css.map",
+    "main.70b5e0e3.js.map": "/PetFinder/static/js/main.70b5e0e3.js.map",
+    "787.08d5ce1b.chunk.js.map": "/PetFinder/static/js/787.08d5ce1b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2c9a63c.css",
+    "static/js/main.70b5e0e3.js"
+  ]
+}
