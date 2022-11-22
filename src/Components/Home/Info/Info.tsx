@@ -102,6 +102,7 @@ const Info = () => {
               <InfoAgeGenderTitle>Age</InfoAgeGenderTitle>
               <InfoImageContainer
                 src={Carret}
+                alt="carret"
                 onClick={() => setAgeOpen(!ageOpen)}
                 className={ageOpen ? 'rotate' : ''}
               />
@@ -126,6 +127,7 @@ const Info = () => {
               <InfoAgeGenderTitle>Gender</InfoAgeGenderTitle>
               <InfoImageContainer
                 src={Carret}
+                alt="carret"
                 onClick={() => setGenderOpen(!genderOpen)}
                 className={genderOpen ? 'rotate' : ''}
               />
@@ -159,7 +161,7 @@ const Info = () => {
               navigate('/Pet');
             }}
           >
-            <InfoImgSearch src={Glass} />
+            <InfoImgSearch src={Glass} alt="glass" />
             <InfoTextSearch>Search</InfoTextSearch>
           </InfoSearchButtonContainer>
         </InfoAgeGenderSearchContainer>

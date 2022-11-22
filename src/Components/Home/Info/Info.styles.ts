@@ -127,7 +127,7 @@ const InfoAgeGenderTitle = styled.h4`
   font-size: 14px;
   font-weight: 700;
 
-  color: #bbcbcb;
+  color: #577088;
 `;
 
 const InfoImageContainer = styled.img`
