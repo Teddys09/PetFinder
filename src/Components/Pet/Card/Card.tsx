@@ -32,8 +32,8 @@ const Card = () => {
   }, [randomAnimals, animalsFiltered]);
 
   const animalImg = (animal: any) => {
-    if (animal?.photos[0]?.small !== undefined) {
-      return animal?.photos[0]?.small;
+    if (animal?.photos[0]?.medium !== undefined) {
+      return animal?.photos[0]?.medium;
     } else {
       return NoImage;
     }
