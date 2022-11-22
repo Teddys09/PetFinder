@@ -33,6 +33,7 @@ const data = createSlice({
     },
     addAnimalsFiltered: (state, action: PayloadAction<object[]>) => {
       addItem(state.animalsFiltered, action.payload);
+      state.animals = [];
     },
   },
 });
