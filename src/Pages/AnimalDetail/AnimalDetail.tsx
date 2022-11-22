@@ -34,7 +34,6 @@ const AnimalDetail = () => {
   const [animals, setAnimals] = useState<Ianimals>({} as Ianimals);
   const animalsRandom = useSelector((state: any) => state.animals[0]);
   const animalsFiltered = useSelector((state: any) => state.animalsFiltered[0]);
-  console.log(id);
 
   useEffect(() => {
     if (animalsRandom && animalsRandom.length > 0) {
@@ -48,8 +47,6 @@ const AnimalDetail = () => {
       setAnimals(animal);
     }
   }, [animalsRandom, animalsFiltered, id]);
-
-  console.log(animals);
 
   // if animals is not empty, render the component
   if (animals && Object.keys(animals).length > 0) {
