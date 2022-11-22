@@ -1,0 +1,27 @@
+// stories for Header component
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { store } from '../../../utils/store';
+
+import PetInfo from './PetInfo';
+
+export default {
+  title: 'Components/PetInfo',
+  component: PetInfo,
+} as ComponentMeta<typeof PetInfo>;
+
+// create template with router
+const Template: ComponentStory<typeof PetInfo> = (args: any) => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <PetInfo {...args} />
+    </BrowserRouter>
+  </Provider>
+);
+export const Container = Template.bind({});
+Container.args = {
+  /* the args you need here will depend on your component */
+};
