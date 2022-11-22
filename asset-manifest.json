@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PetFinder/static/css/main.c2c9a63c.css",
-    "main.js": "/PetFinder/static/js/main.43734fa8.js",
+    "main.js": "/PetFinder/static/js/main.2b4b9d55.js",
     "static/js/787.08d5ce1b.chunk.js": "/PetFinder/static/js/787.08d5ce1b.chunk.js",
     "static/media/dog-home-big.jpg": "/PetFinder/static/media/dog-home-big.c091b548e5077f4d31d9.jpg",
     "static/media/cat-home-big.jpg": "/PetFinder/static/media/cat-home-big.f860349f5e367a7eef88.jpg",
@@ -17,11 +17,11 @@
     "static/media/caret-right-solid.svg": "/PetFinder/static/media/caret-right-solid.6beb0c5f55b4c606ddbabd5c8bdd1e46.svg",
     "static/media/caret-left-solid.svg": "/PetFinder/static/media/caret-left-solid.682853370b4000c0af78c0910e6cc13e.svg",
     "main.c2c9a63c.css.map": "/PetFinder/static/css/main.c2c9a63c.css.map",
-    "main.43734fa8.js.map": "/PetFinder/static/js/main.43734fa8.js.map",
+    "main.2b4b9d55.js.map": "/PetFinder/static/js/main.2b4b9d55.js.map",
     "787.08d5ce1b.chunk.js.map": "/PetFinder/static/js/787.08d5ce1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c2c9a63c.css",
-    "static/js/main.43734fa8.js"
+    "static/js/main.2b4b9d55.js"
   ]
 }
