@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import PetInfo from '../../Components/AnimalDetail/PetInfo/PetInfo';
 import Lightbox from '../../Components/Lightbox/Lightbox';
 import Error from '../Error/Error';
-import { AnimalDetailContainer } from './AnimalDetail.styles';
+import { AnimalDetailContainer, ArrowLeft } from './AnimalDetail.styles';
+import ArrowLeftImg from '../../assets/icon/arrow-left.svg';
+import { useNavigate } from 'react-router-dom';
 
 type Ianimals = {
   name: string;
@@ -24,37 +26,37 @@ type Ianimals = {
 };
 
 const AnimalDetail = () => {
-  //use url search param to get animal id from url
   const urlSearchParams = new URLSearchParams(window.location.search);
   const idInUrl = urlSearchParams.get('_id') ?? '';
-
-  // convert id to number
   const id = parseInt(idInUrl);
-
   const [animals, setAnimals] = useState<Ianimals>({} as Ianimals);
   const animalsRandom = useSelector((state: any) => state.animals[0]);
   const animalsFiltered = useSelector((state: any) => state.animalsFiltered[0]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (animalsRandom && animalsRandom.length > 0) {
-      // return the item that matches the id
       const animal = animalsRandom.find((animal: any) => animal.id === id);
-
       setAnimals(animal);
     } else if (animalsFiltered && animalsFiltered.length > 0) {
-      // return the item that matches the id
       const animal = animalsFiltered.find((animal: any) => animal.id === id);
       setAnimals(animal);
     }
   }, [animalsRandom, animalsFiltered, id]);
 
-  // if animals is not empty, render the component
   if (animals && Object.keys(animals).length > 0) {
     return (
-      <AnimalDetailContainer>
-        <Lightbox {...animals} />
-        <PetInfo {...animals} />
-      </AnimalDetailContainer>
+      <>
+        <AnimalDetailContainer>
+          <Lightbox {...animals} />
+          <PetInfo {...animals} />
+        </AnimalDetailContainer>
+        <ArrowLeft
+          src={ArrowLeftImg}
+          alt="arrow-left"
+          onClick={() => navigate('/Pet')}
+        />
+      </>
     );
   } else {
     return <Error />;

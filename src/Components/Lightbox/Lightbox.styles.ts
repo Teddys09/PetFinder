@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const LightboxContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin-top: 20px;
-  border-radius: 10px;
+
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   position: relative;
   @media (min-width: 768px) {
@@ -15,10 +15,9 @@ const LightboxContainer = styled.div`
 const ImageContainer = styled.div`
   width: 100%;
   height: 400px;
-  border-radius: 10px 10px 0px 0px;
   overflow: hidden;
   @media (min-width: 768px) {
-    height: 94%;
+    height: 100%;
   }
 `;
 
@@ -45,12 +44,26 @@ const LightboxDescription = styled.div`
 const LightboxCarretRight = styled.div`
   position: absolute;
   top: 40%;
-  right: 0;
+  right: 10px;
 `;
 const LightboxCarretLeft = styled.div`
   position: absolute;
   top: 40%;
-  left: 0;
+  left: 10px;
+`;
+
+const CarretFilter = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 `;
 
 const ImgCarret = styled.img`
@@ -66,4 +79,5 @@ export {
   LightboxCarretRight,
   LightboxCarretLeft,
   ImgCarret,
+  CarretFilter,
 };

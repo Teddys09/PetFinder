@@ -20,6 +20,7 @@ const HeaderContainer = styled.header`
     animation-fill-mode: forwards;
   }
 `;
+
 const ImageHeader = styled.img`
   width: 10vh;
   height: 100%;

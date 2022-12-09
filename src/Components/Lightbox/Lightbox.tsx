@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import {
+  CarretFilter,
   ImageContainer,
   ImageLightbox,
   ImgCarret,
   LightboxCarretLeft,
   LightboxCarretRight,
   LightboxContainer,
-  LightboxDescription,
 } from './Lightbox.styles';
 
 import CarretRirght from '../../assets/icon/caret-right-solid.svg';
@@ -60,7 +60,9 @@ const Lightbox = (animals: Ianimals) => {
               }
             }}
           >
-            <ImgCarret src={CarretLeft} alt="carret-left" />
+            <CarretFilter>
+              <ImgCarret src={CarretLeft} alt="carret-left" />
+            </CarretFilter>
           </LightboxCarretLeft>
           <LightboxCarretRight
             onClick={() => {
@@ -71,17 +73,15 @@ const Lightbox = (animals: Ianimals) => {
               }
             }}
           >
-            <ImgCarret src={CarretRirght} alt="carret-right" />
+            <CarretFilter>
+              <ImgCarret src={CarretRirght} alt="carret-right" />
+            </CarretFilter>
           </LightboxCarretRight>
         </>
       ) : null}
       <ImageContainer>
         <ImageLightbox src={animalImg()} alt={animals?.name} />
       </ImageContainer>
-
-      <LightboxDescription>
-        <h2>{animals?.name}</h2>
-      </LightboxDescription>
     </LightboxContainer>
   );
 };

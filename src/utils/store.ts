@@ -4,12 +4,14 @@ type IinitialState = {
   animals: object[];
   filter: object;
   animalsFiltered: object[];
+  token: string;
 };
 
 const initialState: IinitialState = {
   animals: [],
   filter: {},
   animalsFiltered: [],
+  token: '',
 };
 
 const data = createSlice({
@@ -35,10 +37,14 @@ const data = createSlice({
       addItem(state.animalsFiltered, action.payload);
       state.animals = [];
     },
+    addToken: (state, action: PayloadAction<string>) => {
+      state.token = action.payload;
+    },
   },
 });
 
-export const { addAnimal, addFilter, addAnimalsFiltered } = data.actions;
+export const { addAnimal, addFilter, addAnimalsFiltered, addToken } =
+  data.actions;
 
 export const createStore = () =>
   configureStore({

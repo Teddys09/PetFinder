@@ -12,16 +12,18 @@ import {
   Menu,
   NavIconImage,
 } from './Header.styles';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [clicked, setClicked] = useState<boolean>(false);
   const handleClick = () => {
     setClicked(!clicked);
   };
+  const navigate = useNavigate();
 
   return (
     <HeaderContainer>
-      <ImageHeader src={Cat} alt="cat" />
+      <ImageHeader src={Cat} alt="cat" onClick={() => navigate('/')} />
       <TitleHeader>Find your pet</TitleHeader>
 
       <LinkContainer>

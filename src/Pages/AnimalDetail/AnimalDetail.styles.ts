@@ -14,4 +14,16 @@ const AnimalDetailContainer = styled.section`
   }
 `;
 
-export { AnimalDetailContainer };
+const ArrowLeft = styled.img`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 16px;
+  left: 10px;
+  z-index: 1;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export { AnimalDetailContainer, ArrowLeft };

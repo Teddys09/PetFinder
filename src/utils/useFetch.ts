@@ -2,9 +2,10 @@ import Axios from 'axios';
 
 import { useDispatch } from 'react-redux';
 
-import { addAnimal, addAnimalsFiltered } from './store';
+import { addAnimal, addAnimalsFiltered, addToken } from './store';
 
-const getToken = async () => {
+const GetToken = async () => {
+  const dispatch = useDispatch();
   const params = {
     grant_type: 'client_credentials',
     client_id: process.env.REACT_APP_CLIENT_ID,
@@ -16,12 +17,15 @@ const getToken = async () => {
     params
   );
 
+  dispatch(addToken(petFinder.data.access_token));
+
   return petFinder.data.access_token;
 };
 
-const GetRandomAnimal = async (url: string) => {
+const GetRandomAnimal = async (url: string, token: string) => {
   const dispatch = useDispatch();
-  const token = await getToken();
+  if (!token) token = await GetToken();
+
   await Axios.get(url, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -37,10 +41,10 @@ const GetRandomAnimal = async (url: string) => {
     });
 };
 
-const GetFilteredAnimal = async (url: string) => {
-  const dispatch = useDispatch();
+const GetFilteredAnimal = async (url: string, token: string) => {
+  if (!token) token = await GetToken();
 
-  const token = await getToken();
+  const dispatch = useDispatch();
 
   await Axios.get(url, {
     headers: {
