@@ -6,24 +6,7 @@ import Error from '../Error/Error';
 import { AnimalDetailContainer, ArrowLeft } from './AnimalDetail.styles';
 import ArrowLeftImg from '../../assets/icon/arrow-left.svg';
 import { useNavigate } from 'react-router-dom';
-
-type Ianimals = {
-  name: string;
-  age: string;
-  contact: {
-    email: string;
-    phone: string;
-  };
-  breeds: {
-    primary: string;
-    secondary: string;
-    mixed: boolean;
-    unknown: boolean;
-  };
-  description: string;
-  photos: [{ small: string; medium: string; large: string; full: string }];
-  status: string;
-};
+import { Ianimals } from '../../utils/type/animal';
 
 const AnimalDetail = () => {
   const urlSearchParams = new URLSearchParams(window.location.search);

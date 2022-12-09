@@ -12,19 +12,8 @@ import {
 import CarretRirght from '../../assets/icon/caret-right-solid.svg';
 import CarretLeft from '../../assets/icon/caret-left-solid.svg';
 import NoImage from '../../assets/img/no-image.webp';
+import { Ianimals } from '../../utils/type/animal';
 
-type Ianimals = {
-  name: string;
-  age: string;
-  contact: {
-    email: string;
-    phone: string;
-  };
-
-  description: string;
-  photos: [{ small: string; medium: string; large: string; full: string }];
-  status: string;
-};
 const Lightbox = (animals: Ianimals) => {
   const [index, setIndex] = useState<number>(0);
 

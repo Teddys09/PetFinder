@@ -35,7 +35,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Info = () => {
   const [dogs, setDogs] = useState<boolean>(true);
-  const [cats, setCats] = useState<boolean>(false);
   const [ageChoice, setAgeChoice] = useState<string>('Any');
   const [genderChoice, setGenderChoice] = useState<string>('Any');
   const [ageOpen, setAgeOpen] = useState<boolean>(false);
@@ -80,7 +79,6 @@ const Info = () => {
           <InfoAnimalType
             onClick={() => {
               setDogs(true);
-              setCats(false);
             }}
             className={dogs ? 'active' : ''}
           >
@@ -89,9 +87,8 @@ const Info = () => {
           <InfoAnimalType
             onClick={() => {
               setDogs(false);
-              setCats(true);
             }}
-            className={cats ? 'active' : ''}
+            className={!dogs ? 'active' : ''}
           >
             Cats
           </InfoAnimalType>
