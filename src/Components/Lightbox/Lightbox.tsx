@@ -13,18 +13,19 @@ import CarretRirght from '../../assets/icon/caret-right-solid.svg';
 import CarretLeft from '../../assets/icon/caret-left-solid.svg';
 import NoImage from '../../assets/img/no-image.webp';
 import { Ianimals } from '../../utils/type/animal';
+import { mobileSize, desktopSize } from '../../utils/magicNumber/screen';
 
 const Lightbox = (animals: Ianimals) => {
   const [index, setIndex] = useState<number>(0);
 
   const animalImg = () => {
     if (animals?.photos?.length > 0) {
-      if (window.screen.width < 768) {
+      if (window.screen.width < mobileSize) {
         return animals?.photos[index].medium;
       }
-      if (window.screen.width > 1350) {
+      if (window.screen.width > desktopSize) {
         return animals?.photos[index].full;
-      } else if (window.screen.width > 768) {
+      } else if (window.screen.width > mobileSize) {
         return animals?.photos[index].large;
       }
     } else {
