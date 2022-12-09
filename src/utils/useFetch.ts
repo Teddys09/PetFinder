@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { addAnimal, addAnimalsFiltered, addToken } from './store';
 
 const GetToken = async () => {
-  const dispatch = useDispatch();
   const params = {
     grant_type: 'client_credentials',
     client_id: process.env.REACT_APP_CLIENT_ID,
@@ -17,14 +16,15 @@ const GetToken = async () => {
     params
   );
 
-  dispatch(addToken(petFinder.data.access_token));
-
   return petFinder.data.access_token;
 };
 
 const GetRandomAnimal = async (url: string, token: string) => {
   const dispatch = useDispatch();
-  if (!token) token = await GetToken();
+  if (!token) {
+    token = await GetToken();
+    dispatch(addToken(token));
+  }
 
   await Axios.get(url, {
     headers: {
@@ -42,9 +42,11 @@ const GetRandomAnimal = async (url: string, token: string) => {
 };
 
 const GetFilteredAnimal = async (url: string, token: string) => {
-  if (!token) token = await GetToken();
-
   const dispatch = useDispatch();
+  if (!token) {
+    token = await GetToken();
+    dispatch(addToken(token));
+  }
 
   await Axios.get(url, {
     headers: {
@@ -59,4 +61,4 @@ const GetFilteredAnimal = async (url: string, token: string) => {
     });
 };
 
-export { GetRandomAnimal, GetFilteredAnimal };
+export { GetRandomAnimal, GetFilteredAnimal, GetToken };

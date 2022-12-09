@@ -24,6 +24,9 @@ const ArrowLeft = styled.img`
   &:hover {
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export { AnimalDetailContainer, ArrowLeft };
