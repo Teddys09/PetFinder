@@ -13,19 +13,16 @@ const AnimalDetail = () => {
   const idInUrl = urlSearchParams.get('_id') ?? '';
   const id = parseInt(idInUrl);
   const [animals, setAnimals] = useState<Ianimals>({} as Ianimals);
-  const animalsRandom = useSelector((state: any) => state.animals[0]);
-  const animalsFiltered = useSelector((state: any) => state.animalsFiltered[0]);
+  const animal = useSelector((state: any) => state.animals);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (animalsRandom && animalsRandom.length > 0) {
-      const animal = animalsRandom.find((animal: any) => animal.id === id);
-      setAnimals(animal);
-    } else if (animalsFiltered && animalsFiltered.length > 0) {
-      const animal = animalsFiltered.find((animal: any) => animal.id === id);
-      setAnimals(animal);
+    if (animal && animal.length > 0) {
+      const animalById = animal.find((animal: any) => animal.id === id);
+      setAnimals(animalById);
     }
-  }, [animalsRandom, animalsFiltered, id]);
+  }, [animal, id]);
 
   if (animals && Object.keys(animals).length > 0) {
     return (

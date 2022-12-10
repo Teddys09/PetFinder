@@ -19,17 +19,13 @@ const Card = () => {
   const [animals, setAnimals] = useState<object[]>([]);
   const navigate = useNavigate();
 
-  const randomAnimals = useSelector((state: any) => state.animals[0]);
-
-  const animalsFiltered = useSelector((state: any) => state.animalsFiltered[0]);
+  const storeAnimals = useSelector((state: any) => state.animals);
 
   useEffect(() => {
-    if (randomAnimals && randomAnimals.length > 0) {
-      setAnimals(randomAnimals);
-    } else if (animalsFiltered && animalsFiltered.length > 0) {
-      setAnimals(animalsFiltered);
+    if (storeAnimals) {
+      setAnimals(storeAnimals);
     }
-  }, [randomAnimals, animalsFiltered]);
+  }, [storeAnimals]);
 
   const animalImg = (animal: any) => {
     if (animal?.photos[0]?.medium !== undefined) {

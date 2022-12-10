@@ -18,12 +18,12 @@ const PetInfoP = styled.p`
   font-size: 18px;
   font-weight: 500;
   padding: 5px 5px;
-  // set an underline for the entire first word
+
   text-decoration: underline;
   text-decoration-color: #577088;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
-  // add spacing between lines
+
   line-height: 1.5;
 `;
 

@@ -1,4 +1,3 @@
-// stories for Header component
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';

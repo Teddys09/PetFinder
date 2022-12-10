@@ -1,10 +1,12 @@
 import Axios from 'axios';
+import { useEffect } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { addAnimal, addAnimalsFiltered, addToken } from './store';
+import { addAnimal, addToken } from './store';
 
 const GetToken = async () => {
+  const dispatch = useDispatch();
   const params = {
     grant_type: 'client_credentials',
     client_id: process.env.REACT_APP_CLIENT_ID,
@@ -15,50 +17,33 @@ const GetToken = async () => {
     'https://api.petfinder.com/v2/oauth2/token',
     params
   );
+  dispatch(addToken(petFinder.data.access_token));
 
   return petFinder.data.access_token;
 };
 
-const GetRandomAnimal = async (url: string, token: string) => {
+const GetAnimals = async () => {
   const dispatch = useDispatch();
-  if (!token) {
-    token = await GetToken();
-    dispatch(addToken(token));
-  }
-
-  await Axios.get(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then((res) => {
-      if (url === 'https://api.petfinder.com/v2/animals') {
-        dispatch(addAnimal(res.data.animals));
+  const token = useSelector((state: any) => state.token);
+  const filter = useSelector((state: any) => state.filter);
+  useEffect(() => {
+    Axios.get(
+      `https://api.petfinder.com/v2/animals?type=${filter.type}&age=${filter.age}&gender=${filter.gender}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    )
+      .then((res) => {
+        dispatch(addAnimal(res.data.animals));
+
+        return res.data.animals;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [token, filter, dispatch]);
 };
 
-const GetFilteredAnimal = async (url: string, token: string) => {
-  const dispatch = useDispatch();
-  if (!token) {
-    token = await GetToken();
-    dispatch(addToken(token));
-  }
-
-  await Axios.get(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then((res) => {
-      dispatch(addAnimalsFiltered(res.data.animals));
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-export { GetRandomAnimal, GetFilteredAnimal, GetToken };
+export { GetAnimals, GetToken };

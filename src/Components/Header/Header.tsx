@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Cat from '../../assets/img/cats-header.png';
 import NavIcon from '../../assets/icon/bars-solid.svg';
-
 import {
   HeaderContainer,
   TitleHeader,
@@ -13,6 +12,8 @@ import {
   NavIconImage,
 } from './Header.styles';
 import { useNavigate } from 'react-router-dom';
+import { GetToken } from '../../utils/useFetch';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [clicked, setClicked] = useState<boolean>(false);
@@ -20,6 +21,10 @@ const Header = () => {
     setClicked(!clicked);
   };
   const navigate = useNavigate();
+  const token = useSelector((state: any) => state.token);
+  if (token === '') {
+    GetToken();
+  }
 
   return (
     <HeaderContainer>

@@ -39,6 +39,10 @@ const LinkHeader = styled(Link)`
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
 
+  &&:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -86,7 +90,6 @@ const Menu = styled.div`
   }
 `;
 
-// export all the styled components
 export {
   HeaderContainer,
   ImageHeader,

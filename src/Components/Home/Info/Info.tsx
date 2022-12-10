@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import Carret from '../../../assets/icon/caret-down-solid.svg';
 import Glass from '../../../assets/icon/magnifying-glass-solid.svg';
 import Dog from '../../../assets/img/dog-home.jpg';
@@ -40,7 +39,6 @@ const Info = () => {
   const [ageOpen, setAgeOpen] = useState<boolean>(false);
   const [genderOpen, setGenderOpen] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string>(Dog);
-  // if window width is less than 768px, then set the image to the small version
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
