@@ -12,24 +12,22 @@ const AnimalDetail = () => {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const idInUrl = urlSearchParams.get('_id') ?? '';
   const id = parseInt(idInUrl);
-  const [animals, setAnimals] = useState<Ianimals>({} as Ianimals);
-  const animal = useSelector((state: any) => state.animals);
-
+  const [animalById, setAnimalById] = useState<Ianimals>({} as Ianimals);
+  const animals = useSelector((state: any) => state.animals);
   const navigate = useNavigate();
-
   useEffect(() => {
-    if (animal && animal.length > 0) {
-      const animalById = animal.find((animal: any) => animal.id === id);
-      setAnimals(animalById);
+    if (animals.length > 0) {
+      const animalById = animals.find((animal: any) => animal.id === id);
+      setAnimalById(animalById);
     }
-  }, [animal, id]);
+  }, [animals, id]);
 
-  if (animals && Object.keys(animals).length > 0) {
+  if (animalById && Object.keys(animalById).length > 0) {
     return (
       <>
         <AnimalDetailContainer>
-          <Lightbox {...animals} />
-          <PetInfo {...animals} />
+          <Lightbox {...animalById} />
+          <PetInfo {...animalById} />
         </AnimalDetailContainer>
         <ArrowLeft
           src={ArrowLeftImg}
