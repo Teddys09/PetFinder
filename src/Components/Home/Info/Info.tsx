@@ -29,7 +29,7 @@ import {
   InfoTitle,
   InfoTypeOfAnimalsContainer,
 } from './Info.styles';
-import { addFilter } from '../../../utils/store';
+import { addFilter, resetAnimals } from '../../../utils/store';
 import { useNavigate } from 'react-router-dom';
 
 const Info = () => {
@@ -146,6 +146,7 @@ const Info = () => {
           </InfoAgeGenderContainer>
           <InfoSearchButtonContainer
             onClick={() => {
+              dispatch(resetAnimals());
               dispatch(
                 addFilter({
                   type: dogs ? 'Dog' : 'Cat',

@@ -50,11 +50,20 @@ const data = createSlice({
     addReachBottom: (state, action: PayloadAction<boolean>) => {
       state.reachBottom = action.payload;
     },
+    resetAnimals: (state) => {
+      state.animals = [];
+    },
   },
 });
 
-export const { addAnimal, addFilter, addToken, addPage, addReachBottom } =
-  data.actions;
+export const {
+  addAnimal,
+  addFilter,
+  addToken,
+  addPage,
+  addReachBottom,
+  resetAnimals,
+} = data.actions;
 
 export const createStore = () =>
   configureStore({
