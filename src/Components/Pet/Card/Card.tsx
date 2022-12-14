@@ -18,7 +18,6 @@ import NoImage from '../../../assets/img/no-image.webp';
 const Card = () => {
   const [animals, setAnimals] = useState<object[]>([]);
   const navigate = useNavigate();
-
   const storeAnimals = useSelector((state: any) => state.animals);
 
   useEffect(() => {

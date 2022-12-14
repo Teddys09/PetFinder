@@ -14,4 +14,5 @@ export type Ianimals = {
   description: string;
   photos: [{ small: string; medium: string; large: string; full: string }];
   status: string;
+  id: number;
 };

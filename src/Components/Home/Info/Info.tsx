@@ -149,8 +149,8 @@ const Info = () => {
               dispatch(
                 addFilter({
                   type: dogs ? 'Dog' : 'Cat',
-                  age: ageChoice === 'Unknown' ? 'Any' : ageChoice,
-                  gender: genderChoice === 'Unknown' ? 'Any' : genderChoice,
+                  age: ageChoice,
+                  gender: genderChoice,
                 })
               );
               navigate('/Pet');

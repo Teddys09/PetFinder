@@ -1,3 +1,3 @@
-const gender: string[] = ['Male', 'Female', 'Unknown', 'Any'];
+const gender: string[] = ['Male', 'Female', 'Any'];
 
 export { gender };
